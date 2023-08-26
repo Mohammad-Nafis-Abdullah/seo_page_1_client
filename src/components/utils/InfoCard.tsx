@@ -7,10 +7,12 @@ import { DataSchema } from "../../schemas/dataSchema";
 import Modal from "./Modal";
 
 interface infoCard_Schema {
-    data: DataSchema;
+    data: DataSchema,
+    refetch: ()=>void,
 }
 
-const InfoCard = ({ data }: infoCard_Schema) => {
+const InfoCard = ({ data,refetch }: infoCard_Schema) => {
+
     return (
         <div className="bg-white p-2 space-y-3 rounded">
             {/* client and host info */}
@@ -75,10 +77,10 @@ const InfoCard = ({ data }: infoCard_Schema) => {
                     </p>
                 </div>
                 <div className="inline-flex items-center gap-1">
-                    <label htmlFor="my_modal_6">
+                    <label htmlFor="modal">
                         <ImAttachment className="w-3 h-3 text-slate-500 cursor-pointer" />
                     </label>
-                    <Modal />
+                    <Modal refetch={refetch} />
                     <p className="text-xs font-bold text-slate-500">
                         {data.attachment}
                     </p>

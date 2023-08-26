@@ -2,7 +2,7 @@ import useFetchData from "../../hooks/useFetchData";
 import InfoCard from "../utils/InfoCard";
 
 const Incomplete = () => {
-  const {data} = useFetchData('/data.json');
+    const { data,refetch } = useFetchData("/data.json");
 
     return (
         <div className="main-card gap-y-3 flex flex-col">
@@ -21,8 +21,8 @@ const Incomplete = () => {
             </section>
 
             <section className="overflow-y-auto grow pr-1 space-y-3">
-                {data.slice(0,7).map((cardData) => (
-                    <InfoCard key={cardData._id} data={cardData} />
+                {data.slice(0, 7).map((cardData) => (
+                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} />
                 ))}
             </section>
         </div>
