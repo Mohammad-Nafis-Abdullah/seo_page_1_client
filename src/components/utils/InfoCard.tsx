@@ -27,7 +27,7 @@ const InfoCard = ({ data, refetch, status }: infoCard_Schema) => {
                         alt=""
                     />
                     <h4 className="font-bold text-xs text-slate-600">
-                        {data.client.name} {status}
+                        {data.client.name}
                     </h4>
                 </div>
                 <div className="inline-flex items-center gap-1">
@@ -91,7 +91,7 @@ const InfoCard = ({ data, refetch, status }: infoCard_Schema) => {
                         displayModal={displayModal}
                     />
                     <p className="text-xs font-bold text-slate-500">
-                        {data.attachment}
+                        {data.attachment.length}
                     </p>
                 </div>
                 <div className="inline-flex items-center gap-1">

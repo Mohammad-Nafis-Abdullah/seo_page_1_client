@@ -6,6 +6,6 @@ export interface DataSchema{
   task: {total:number,completed:number}
   participant: number,
   chat: number,
-  attachment: number,
+  attachment: unknown[],
   date: string
 }

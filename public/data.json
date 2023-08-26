@@ -1,6 +1,5 @@
 [
   {
-    "_id": "64e9042cd652af9a40ccbcc6",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -16,11 +15,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042ced5463a3b35cfc53",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -36,11 +34,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042ce0786f5bd81fccea",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -56,11 +53,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c6919b1b326e70170",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -76,11 +72,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c91256250bed958be",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -96,11 +91,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c11512eedec96cb68",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -116,11 +110,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c3c59f397f59adbde",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -136,11 +129,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c034cc27ab6bc0372",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -156,11 +148,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042cdd2571a5725e8d32",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -176,11 +167,10 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   },
   {
-    "_id": "64e9042c736b56865049957a",
     "client": {
       "img": "/client.png",
       "name": "Client Name"
@@ -196,7 +186,7 @@
     },
     "participant": 12,
     "chat": 15,
-    "attachment": 25,
+    "attachment": [],
     "date": "30-12-2022"
   }
 ]

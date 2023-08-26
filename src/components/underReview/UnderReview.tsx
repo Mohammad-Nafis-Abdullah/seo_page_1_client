@@ -1,8 +1,10 @@
 import useFetchData from "../../hooks/useFetchData";
 import InfoCard from "../utils/InfoCard";
 
+const type = 'underReview';
+
 const UnderReview = () => {
-    const { data, refetch } = useFetchData("/data.json");
+    const { data, refetch } = useFetchData(`http://localhost:5000/collections/${type}`);
 
     return (
         <div className="main-card gap-y-3 flex flex-col">
@@ -22,7 +24,7 @@ const UnderReview = () => {
 
             <section className="overflow-y-auto grow pr-1 space-y-3">
                 {data.slice(0, 6).map((cardData) => (
-                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} status="underReview" />
+                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} status={type} />
                 ))}
             </section>
         </div>
