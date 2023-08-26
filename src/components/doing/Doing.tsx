@@ -22,7 +22,7 @@ const Doing = () => {
 
             <section className="overflow-y-auto grow pr-1 space-y-3">
                 {data.slice(0, 5).map((cardData) => (
-                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} />
+                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} status="doing" />
                 ))}
             </section>
         </div>

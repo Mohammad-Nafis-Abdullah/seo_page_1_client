@@ -22,7 +22,7 @@ const Completed = () => {
 
             <section className="overflow-y-auto grow pr-1 space-y-3">
                 {data.slice(0, 6).map((cardData) => (
-                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} />
+                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} status="completed" />
                 ))}
             </section>
         </div>

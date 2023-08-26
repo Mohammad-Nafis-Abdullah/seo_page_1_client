@@ -5,13 +5,16 @@ import { ImAttachment } from "react-icons/im";
 import { BiCalendar } from "react-icons/bi";
 import { DataSchema } from "../../schemas/dataSchema";
 import Modal from "./Modal";
+import { useState } from "react";
 
 interface infoCard_Schema {
-    data: DataSchema,
-    refetch: ()=>void,
+    status: string;
+    data: DataSchema;
+    refetch: () => void;
 }
 
-const InfoCard = ({ data,refetch }: infoCard_Schema) => {
+const InfoCard = ({ data, refetch, status }: infoCard_Schema) => {
+    const [displayModal, setDisplayModal] = useState(false);
 
     return (
         <div className="bg-white p-2 space-y-3 rounded">
@@ -24,7 +27,7 @@ const InfoCard = ({ data,refetch }: infoCard_Schema) => {
                         alt=""
                     />
                     <h4 className="font-bold text-xs text-slate-600">
-                        {data.client.name}
+                        {data.client.name} {status}
                     </h4>
                 </div>
                 <div className="inline-flex items-center gap-1">
@@ -77,10 +80,16 @@ const InfoCard = ({ data,refetch }: infoCard_Schema) => {
                     </p>
                 </div>
                 <div className="inline-flex items-center gap-1">
-                    <label htmlFor="modal">
-                        <ImAttachment className="w-3 h-3 text-slate-500 cursor-pointer" />
-                    </label>
-                    <Modal refetch={refetch} />
+                    <ImAttachment
+                        onClick={() => setDisplayModal(true)}
+                        className="w-3 h-3 text-slate-500 cursor-pointer"
+                    />
+                    <Modal
+                        refetch={refetch}
+                        status={status}
+                        setDisplayModal={setDisplayModal}
+                        displayModal={displayModal}
+                    />
                     <p className="text-xs font-bold text-slate-500">
                         {data.attachment}
                     </p>
