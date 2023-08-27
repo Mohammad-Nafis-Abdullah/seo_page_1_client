@@ -85,6 +85,7 @@ const InfoCard = ({ data, refetch, status }: infoCard_Schema) => {
                         className="w-3 h-3 text-slate-500 cursor-pointer"
                     />
                     <Modal
+                        id={data._id}
                         refetch={refetch}
                         status={status}
                         setDisplayModal={setDisplayModal}

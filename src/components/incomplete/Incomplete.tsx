@@ -1,10 +1,12 @@
 import useFetchData from "../../hooks/useFetchData";
 import InfoCard from "../utils/InfoCard";
 
-const type = 'incomplete';
+const type = "incomplete";
 
 const Incomplete = () => {
-    const { data,refetch } = useFetchData(`http://localhost:5000/collections/${type}`);
+    const { data, refetch } = useFetchData(
+        `${import.meta.env.VITE_API_URL}/collections/${type}`
+    );
 
     return (
         <div className="main-card gap-y-3 flex flex-col">
@@ -24,7 +26,12 @@ const Incomplete = () => {
 
             <section className="overflow-y-auto grow pr-1 space-y-3">
                 {data.slice(0, 7).map((cardData) => (
-                    <InfoCard key={cardData._id} data={cardData} refetch={refetch} status={type} />
+                    <InfoCard
+                        key={cardData._id}
+                        data={cardData}
+                        refetch={refetch}
+                        status={type}
+                    />
                 ))}
             </section>
         </div>

@@ -12,5 +12,5 @@ export default function useFetchData(url:string){
     },[refetcher,url])
 
 
-    return {data:state,refetch(){setRefetcher(prev=>!prev)}}
+    return {data:state,refetch:function(){setRefetcher(prev=>!prev)}}
 }

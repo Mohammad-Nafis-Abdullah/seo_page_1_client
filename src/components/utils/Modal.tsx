@@ -1,13 +1,21 @@
+import axios from "axios";
 import { Dispatch, FormEvent, SetStateAction, useRef, useState } from "react";
 
 interface modal_schema {
+    id: string;
     status: string;
     refetch: () => void;
-    setDisplayModal: Dispatch<SetStateAction<boolean>>,
-    displayModal: boolean,
+    setDisplayModal: Dispatch<SetStateAction<boolean>>;
+    displayModal: boolean;
 }
 
-const Modal = ({ refetch, status, setDisplayModal, displayModal }: modal_schema) => {
+const Modal = ({
+    refetch,
+    status,
+    setDisplayModal,
+    displayModal,
+    id,
+}: modal_schema) => {
     const [files, setFiles] = useState<File[]>([] as File[]);
     const fileInput_ref = useRef<HTMLInputElement | null>(null);
 
@@ -19,24 +27,37 @@ const Modal = ({ refetch, status, setDisplayModal, displayModal }: modal_schema)
         }
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(status);
+
+        // upload files by form
+        const form = new FormData();
+        files.forEach((file)=> {
+            form.append('files',file);
+        })
+
+        try {
+            await axios.patch(`${import.meta.env.VITE_API_URL}/collections/${status}/${id}`,form);
+        } catch (err) {
+            console.log(err);
+        }
 
         refetch();
         handleClose();
     };
 
     return (
-        <section className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center ${displayModal?'block':'hidden'}`}>
+        <section
+            className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center ${
+                displayModal ? "block" : "hidden"
+            }`}
+        >
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-y-5 absolute bg-white p-5 rounded-lg"
             >
                 {/* modal title */}
-                <h3 className="font-bold text-lg">
-                    Upload Attachments
-                </h3>
+                <h3 className="font-bold text-lg">Upload Attachments</h3>
 
                 {/* upload preview */}
                 <div className="flex flex-col gap-2">
@@ -66,7 +87,11 @@ const Modal = ({ refetch, status, setDisplayModal, displayModal }: modal_schema)
                 />
 
                 <div className="flex justify-between">
-                    <button type="submit" className="btn btn-success">
+                    <button
+                        type="submit"
+                        disabled={!files.length}
+                        className="btn btn-success"
+                    >
                         Upload
                     </button>
                     <button
