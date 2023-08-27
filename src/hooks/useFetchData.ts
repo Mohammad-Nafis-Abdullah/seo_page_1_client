@@ -10,8 +10,10 @@ export default function useFetchData(url:string){
 
     useEffect(()=> {
         setLoading(true);
-        axios.get(url).then(({data})=>setState(data));
-        setLoading(false);
+        axios.get(url).then(({data})=>{
+            setState(data);
+            setLoading(false);
+        });
     },[refetcher,url])
 
     return {data:state,refetch:function(){setRefetcher(prev=>!prev)},loading}
