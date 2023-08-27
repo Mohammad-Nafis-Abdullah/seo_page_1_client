@@ -48,7 +48,7 @@ const Modal = ({
 
     return (
         <section
-            className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center ${
+            className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center p-3 ${
                 displayModal ? "block" : "hidden"
             }`}
         >
