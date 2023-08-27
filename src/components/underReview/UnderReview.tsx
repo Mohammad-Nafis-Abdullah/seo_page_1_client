@@ -1,15 +1,17 @@
 import useFetchData from "../../hooks/useFetchData";
+import Loading from "../share/Loading/Loading";
 import InfoCard from "../utils/InfoCard";
 
 const type = "underReview";
 
 const UnderReview = () => {
-    const { data, refetch } = useFetchData(
+    const { data, refetch, loading } = useFetchData(
         `${import.meta.env.VITE_API_URL}/collections/${type}`
     );
 
     return (
         <div className="main-card gap-y-3 flex flex-col">
+            {loading && <Loading/>}
             <section className="relative flex">
                 <progress
                     className="progress progress-error w-full bg-slate-300 h-10"
