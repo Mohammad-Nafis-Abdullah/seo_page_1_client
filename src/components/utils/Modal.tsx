@@ -48,7 +48,7 @@ const Modal = ({
 
     return (
         <section
-            className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center p-5 ${
+            className={`bg-slate-950/60 backdrop-blur-[2px] z-[999] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center p-5 overflow-auto ${
                 displayModal ? "block" : "hidden"
             }`}
         >
@@ -60,7 +60,7 @@ const Modal = ({
                 <h3 className="font-bold text-lg">Upload Attachments</h3>
 
                 {/* upload preview */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 max-h-[40vh] overflow-auto pr-1.5">
                     {files.map((file: File, i) => {
                         return (
                             <span
